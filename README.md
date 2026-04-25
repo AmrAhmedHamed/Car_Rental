@@ -217,7 +217,7 @@ User sees updated status
 
 - Java 17 or higher
 - Node.js 16+ and npm
-- MySQL or PostgreSQL
+- ORCAL or PostgreSQL
 - Maven
 - Stripe account (for API keys)
 
