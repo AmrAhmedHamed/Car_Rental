@@ -7,7 +7,6 @@ A full-stack web application for managing car rentals and purchases, featuring s
 ## 📝 Description
 
 This platform provides a comprehensive solution for renting and buying cars online. The application features role-based access control with distinct user and administrator experiences:
-
 - **Users** can browse available cars, book them for rental or purchase, and pay securely via Stripe — orders remain pending until admin action.
 - **Admins** can add/edit/delete cars, view all bookings and purchases, and approve, reject, or delete any order.
 - **Secure Authentication** using JWT tokens.
@@ -94,7 +93,7 @@ src/
 | Spring Data JPA | Database operations |
 | JWT (JSON Web Tokens) | Secure stateless auth |
 | Hibernate | ORM framework |
-| MySQL / PostgreSQL | Database |
+| ORCAL / PostgreSQL | Database |
 | Stripe Java SDK | Payment processing |
 | Swagger / OpenAPI 3.0 | API documentation |
 | Lombok | Reduce boilerplate |
