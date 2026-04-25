@@ -225,7 +225,7 @@ User sees updated status
 
 **1. Clone the repository**
 ```bash
-git clone https://github.com/your-username/car-platform.git
+git clone https://github.com/AmrAhmedHamed/Car_Rental/tree/main
 cd car-platform/backend
 ```
 
