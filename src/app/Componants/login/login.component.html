@@ -1,0 +1,32 @@
+<div class="login-card">
+  <h3>Welcome Back</h3>
+  <p class="subtitle">Sign in to your account</p>
+
+  <div class="mb-3">
+    <label class="form-label">Username</label>
+    <input type="text" class="form-control"
+           placeholder="Enter your username" #username>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Password</label>
+    <input type="password" class="form-control"
+           placeholder="Enter your password" #password>
+  </div>
+
+  <button class="btn btn-primary"
+          (click)="login(username.value, password.value)">
+    Login
+  </button>
+
+  <div class="register-link">
+    Don't have an account? <a routerLink="/signup">Register</a>
+  </div>
+
+  <div *ngIf="messages.length > 0" class="alert alert-danger notification">
+    <div *ngFor="let msg of messages">
+      <strong>{{msg.messageEn}}</strong><br>
+      <small>{{msg.messageAr}}</small>
+    </div>
+  </div>
+</div>

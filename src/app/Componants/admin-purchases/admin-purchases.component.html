@@ -1,0 +1,46 @@
+<div class="page-wrap">
+  <h2 class="page-title">All Sales (Purchases)</h2>
+
+  <div *ngIf="purchases.length === 0" class="empty-msg">
+    No purchases found.
+  </div>
+
+  <div *ngFor="let p of purchases" class="purchase-card">
+    <div class="purchase-inner">
+
+      <div class="purchase-img-wrap">
+        <img
+          [src]="p.carImage ? 'data:image/jpeg;base64,' + p.carImage : 'https://via.placeholder.com/200x150?text=No+Image'"
+          alt="Car">
+      </div>
+
+      <div class="purchase-details">
+        <h4 class="purchase-car-name"> {{p.carName || 'Car #' + p.carId}}</h4>
+        <p class="purchase-user">User: <strong>{{p.username}}</strong></p>
+        <hr class="purchase-divider">
+        <p class="purchase-info">
+          Buy Date : <strong>{{p.buyDate | date:'dd/MM/yyyy'}}</strong> &ndash;
+          Price : <strong>{{p.price | currency:'EGP '}}</strong>
+        </p>
+        <span class="status-badge"
+              [class.approved]="p.status === 'APPROVED'"
+              [class.rejected]="p.status === 'REJECTED'"
+              [class.pending]="p.status === 'PENDING'">
+          {{p.status}}
+        </span>
+
+        <div class="admin-actions">
+          <button class="btn-approve"
+                  (click)="updateStatus(p.id!, 'APPROVED')"
+                  [disabled]="p.status === 'APPROVED'">Approve</button>
+          <button class="btn-reject"
+                  (click)="updateStatus(p.id!, 'REJECTED')"
+                  [disabled]="p.status === 'REJECTED'">Reject</button>
+          <button class="btn-delete"
+                  (click)="deletePurchase(p.id!)">Delete</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

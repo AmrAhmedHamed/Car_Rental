@@ -1,0 +1,34 @@
+<div class="page-wrap">
+  <h2 class="page-title">My Purchases</h2>
+
+  <div *ngIf="purchases.length === 0" class="empty-msg">
+    You haven't bought any car yet.
+  </div>
+
+  <div *ngFor="let p of purchases" class="purchase-card">
+    <div class="purchase-inner">
+
+      <div class="purchase-img-wrap">
+        <img
+          [src]="p.carImage ? 'data:image/jpeg;base64,' + p.carImage : 'assets/default-car.jpg'"
+          alt="Car">
+      </div>
+
+      <div class="purchase-details">
+        <h4 class="purchase-car-name">{{p.carName || 'Car #' + p.carId}}</h4>
+        <hr class="purchase-divider">
+        <p class="purchase-info">
+          Buy Date : <strong>{{p.buyDate | date:'dd/MM/yyyy'}}</strong> &ndash;
+          Price : <strong>{{p.price | currency:'EGP '}}</strong>
+        </p>
+        <span class="status-badge"
+              [class.approved]="p.status === 'APPROVED'"
+              [class.rejected]="p.status === 'REJECTED'"
+              [class.pending]="p.status === 'PENDING'">
+          {{p.status}}
+        </span>
+      </div>
+
+    </div>
+  </div>
+</div>

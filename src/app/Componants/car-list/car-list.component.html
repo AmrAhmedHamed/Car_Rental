@@ -1,0 +1,45 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12">
+      <div *ngFor="let car of cars" class="car-card mb-3">
+        <div class="car-card-inner">
+
+          <div class="car-image-wrapper">
+            <img
+              [src]="car.returnedImage ? 'data:image/jpeg;base64,' + car.returnedImage : 'https://via.placeholder.com/220x165?text=No+Image'"
+              class="car-image"
+              alt="Car">
+          </div>
+
+          <div class="car-details">
+            <h4 class="car-title">{{car.brand}} - {{car.name}}</h4>
+            <p class="car-subtitle">{{car.brand}} {{car.name}}</p>
+            <hr class="car-divider">
+            <p class="car-specs">
+              Price : <strong>{{car.price}} EGP</strong> &ndash;
+              BuyPrice : <strong>{{car.buyPrice}} EGP</strong> &ndash;
+              Color : <strong>{{car.color}}</strong> &ndash;
+              Transmission : <strong>{{car.transmission}}</strong> &ndash;
+              Type : <strong>{{car.type}}</strong> &ndash;
+              Year : <strong>{{car.year}}</strong>
+            </p>
+
+            <div *ngIf="isAdmin()" class="car-actions">
+              <button class="btn-update" [routerLink]="['/edit-car', car.id]">Update</button>
+              <button class="btn-delete" (click)="deleteCar(car.id!)">Delete</button>
+            </div>
+
+            <div *ngIf="isUserLogin() && !isAdmin()" class="car-actions">
+              <button class="btn-update" [routerLink]="['/car', car.id]">Rent</button>
+              <button class="btn-buy"
+                      (click)="buyCar(car.id!, car.brand + ' ' + car.name, car.buyPrice)">
+                Buy
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

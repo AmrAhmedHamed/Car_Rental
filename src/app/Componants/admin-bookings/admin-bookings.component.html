@@ -1,0 +1,45 @@
+<div class="page-wrap">
+  <h2 class="page-title">All Rentals (Bookings)</h2>
+
+  <div *ngIf="bookings.length === 0" class="empty-msg">
+    No bookings found.
+  </div>
+
+  <div *ngFor="let b of bookings" class="purchase-card">
+    <div class="purchase-inner">
+
+      <div class="purchase-img-wrap">
+        <img
+          [src]="b.carImage ? 'data:image/jpeg;base64,' + b.carImage : 'https://via.placeholder.com/200x150?text=No+Image'"
+          alt="Car">
+      </div>
+
+      <div class="purchase-details">
+        <h4 class="purchase-car-name"> {{b.carName || 'Car #' + b.carId}}</h4>
+        <p class="purchase-user">User: <strong>{{b.username}}</strong></p>
+        <hr class="purchase-divider">
+        <p class="purchase-info">
+          From : <strong>{{b.fromDate | date:'dd/MM/yyyy'}}</strong> &ndash;
+          To : <strong>{{b.toDate | date:'dd/MM/yyyy'}}</strong> &ndash;
+          Days : <strong>{{b.days}}</strong> &ndash;
+          Price : <strong>{{b.price | currency:'EGP '}}</strong>
+        </p>
+        <span class="status-badge"
+              [class.approved]="b.bookCarStatus === 'APPROVED'"
+              [class.rejected]="b.bookCarStatus === 'REJECTED'"
+              [class.pending]="b.bookCarStatus === 'PENDING'">
+          {{b.bookCarStatus}}
+        </span>
+
+        <div class="admin-actions">
+          <button class="btn-approve" (click)="updateStatus(b.id!, 'APPROVED')"
+                  [disabled]="b.bookCarStatus === 'APPROVED'">Approve</button>
+          <button class="btn-reject" (click)="updateStatus(b.id!, 'REJECTED')"
+                  [disabled]="b.bookCarStatus === 'REJECTED'">Reject</button>
+          <button class="btn-delete" (click)="deleteBooking(b.id!)">Delete</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

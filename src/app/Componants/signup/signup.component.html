@@ -1,0 +1,45 @@
+<div class="signup-card">
+  <h3>Create Account</h3>
+  <p class="subtitle">Join us today</p>
+
+  <div class="mb-3">
+    <label class="form-label">Username</label>
+    <input type="text" class="form-control"
+           placeholder="Enter your username" #username>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Password</label>
+    <input type="password" class="form-control"
+           placeholder="Enter your password" #password>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Confirm Password</label>
+    <input type="password" class="form-control"
+           placeholder="Re-enter your password" #confirmPassword>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Age</label>
+    <input type="number" class="form-control"
+           placeholder="Enter your age"
+           min="16" max="80" #Age>
+  </div>
+
+  <button class="btn btn-success"
+          (click)="CreateAccount(username.value, password.value, confirmPassword.value, +Age.value)">
+    Sign Up
+  </button>
+
+  <div class="login-link">
+    Already have an account? <a routerLink="/login">Login</a>
+  </div>
+
+  <div *ngIf="messages.length > 0" class="alert alert-danger notification">
+    <div *ngFor="let msg of messages">
+      <strong>{{msg.messageEn}}</strong><br>
+      <small>{{msg.messageAr}}</small>
+    </div>
+  </div>
+</div>

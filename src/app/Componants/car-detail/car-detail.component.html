@@ -1,0 +1,52 @@
+<div class="detail-page" *ngIf="car">
+
+  <!-- Car Info Card -->
+  <div class="car-info-card">
+    <div class="car-info-inner">
+      <div class="car-img-wrap">
+        <img
+          [src]="car.returnedImage ? 'data:image/jpeg;base64,' + car.returnedImage : 'assets/default-car.jpg'"
+          alt="Car">
+      </div>
+      <div class="car-info-text">
+        <h3 class="car-title">{{car.brand}} - {{car.name}}</h3>
+        <p class="car-sub">{{car.brand}} {{car.name}}</p>
+        <hr>
+        <p class="car-specs">
+          Price : <strong>${{car.price}}</strong> –
+          Color : <strong>{{car.color}}</strong> –
+          Transmission : <strong>{{car.transmission}}</strong> –
+          Type : <strong>{{car.type}}</strong> –
+          Year : <strong>{{car.year}}</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Booking Form -->
+  <div class="booking-form">
+    <div class="date-row">
+      <div class="date-field">
+        <label>From Date :</label>
+        <input type="date" [(ngModel)]="rentFrom" (change)="calcRent()">
+      </div>
+      <div class="date-field">
+        <label>To Date :</label>
+        <input type="date" [(ngModel)]="rentTo" (change)="calcRent()">
+      </div>
+    </div>
+
+    <div class="summary" *ngIf="totalDays > 0">
+      <span>Days: <strong>{{totalDays}}</strong></span>
+      <span>Total: <strong>{{totalPrice}} EGP</strong></span>
+    </div>
+
+    <!-- تغيير زر الحجز ليقوم بالتوجيه إلى الدفع -->
+    <button class="book-btn" (click)="proceedToRent()" [disabled]="totalDays <= 0">
+      Proceed to Payment
+    </button>
+  </div>
+
+</div>
+
+<div *ngIf="!car" class="loading">Loading...</div>

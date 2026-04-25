@@ -1,0 +1,156 @@
+.detail-page {
+  max-width: 860px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Car Info Card */
+.car-info-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.car-info-inner {
+  display: flex;
+  align-items: center;
+}
+
+.car-img-wrap {
+  flex-shrink: 0;
+  width: 220px;
+  height: 165px;
+  overflow: hidden;
+}
+
+.car-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.car-info-text {
+  flex: 1;
+  padding: 20px 28px;
+}
+
+.car-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #3a7bd5;
+  text-transform: uppercase;
+  margin: 0 0 4px 0;
+}
+
+.car-sub {
+  color: #777;
+  font-size: 0.9rem;
+  margin: 0 0 10px 0;
+}
+
+.car-info-text hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 10px 0;
+}
+
+.car-specs {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.car-specs strong {
+  color: #222;
+}
+
+/* Booking Form */
+.booking-form {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  padding: 28px 32px;
+}
+
+.date-row {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.date-field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.date-field label {
+  font-size: 0.9rem;
+  color: #444;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.date-field input {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  color: #333;
+  outline: none;
+  background: #f9f9f9;
+}
+
+.date-field input:focus {
+  border-color: #3a7bd5;
+  background: #fff;
+}
+
+.summary {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.summary strong {
+  color: #222;
+}
+
+.book-btn {
+  background: #1a1a2e;
+  color: #fff;
+  border: none;
+  padding: 12px 50px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.book-btn:hover {
+  background: #3a7bd5;
+}
+
+.book-btn:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+.loading {
+  text-align: center;
+  padding: 60px;
+  color: #888;
+}
+
+@media (max-width: 600px) {
+  .car-info-inner { flex-direction: column; }
+  .car-img-wrap { width: 100%; height: 200px; }
+  .date-row { flex-direction: column; gap: 15px; }
+}

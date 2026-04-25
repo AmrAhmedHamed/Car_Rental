@@ -1,0 +1,34 @@
+<div class="car-navbar">
+  <div class="navbar-inner">
+
+    <a routerLink="/cars" class="brand-text">CarRent</a>
+
+    <!-- Guest -->
+    <div *ngIf="!isUserLogin()" class="nav-links">
+      <a class="nav-link-custom" routerLink="/login">Login</a>
+      <a class="nav-link-primary" routerLink="/signup">Sign Up</a>
+    </div>
+
+    <!-- Admin -->
+    <div *ngIf="isUserLogin() && isAdmin()" class="nav-links">
+      <span class="admin-badge">Admin</span>
+      <a class="nav-link-custom" routerLink="/cars">Dashboard</a>
+      <a class="nav-link-custom" routerLink="/add-car"> Car</a>
+      <a class="nav-link-custom" routerLink="/admin/bookings">Bookings</a>
+      <a class="nav-link-custom" routerLink="/admin/purchases">Purchases</a>
+      <div class="nav-divider"></div>
+      <a class="nav-link-danger" href="#" (click)="logOut(); $event.preventDefault()">Logout</a>
+    </div>
+
+    <!-- User -->
+    <div *ngIf="isUserLogin() && !isAdmin()" class="nav-links">
+      <span class="admin-badge">User</span>
+      <a class="nav-link-custom" routerLink="/cars">Dashboard</a>
+      <a class="nav-link-custom" routerLink="/my-bookings">My Bookings</a>
+      <a class="nav-link-custom" routerLink="/my-purchases">My Purchases</a>
+      <div class="nav-divider"></div>
+      <a class="nav-link-danger" href="#" (click)="logOut(); $event.preventDefault()">Logout</a>
+    </div>
+
+  </div>
+</div>

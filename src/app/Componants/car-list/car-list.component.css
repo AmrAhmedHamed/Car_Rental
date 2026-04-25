@@ -1,0 +1,147 @@
+/* ===== صفحة القائمة ===== */
+.container {
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+/* ===== كارد العربية ===== */
+.car-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+  margin-bottom: 20px;
+
+}
+
+.car-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.car-card-inner {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* ===== الصورة ===== */
+.car-image-wrapper {
+  flex-shrink: 0;
+  width: 220px;
+  height: 160px;
+  overflow: hidden;
+}
+
+.car-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== التفاصيل ===== */
+.car-details {
+  flex: 1;
+  padding: 20px 28px;
+}
+
+.car-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #3a7bd5;
+  margin: 0 0 4px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.car-subtitle {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0 0 10px 0;
+}
+
+.car-divider {
+  border: none;
+  border-top: 1px solid #e8e8e8;
+  margin: 10px 0;
+}
+
+.car-specs {
+  font-size: 0.88rem;
+  color: #444;
+  margin: 0 0 16px 0;
+  line-height: 1.6;
+}
+
+.car-specs strong {
+  color: #222;
+}
+
+/* ===== الأزرار ===== */
+.car-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.btn-update {
+  background: #3a7bd5;
+  color: #fff;
+  border: none;
+  padding: 8px 22px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-update:hover {
+  background: #2d62b0;
+}
+
+.btn-delete {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 8px 22px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-delete:hover {
+  background: #c0392b;
+}
+
+.btn-buy {
+  background: #27ae60;
+  color: #fff;
+  border: none;
+  padding: 8px 22px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-buy:hover {
+  background: #1e8449;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .car-card-inner {
+    flex-direction: column;
+  }
+
+  .car-image-wrapper {
+    width: 100%;
+    height: 200px;
+  }
+
+  .car-actions {
+    justify-content: flex-start;
+  }
+
+}

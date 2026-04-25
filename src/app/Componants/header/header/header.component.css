@@ -1,0 +1,71 @@
+.car-navbar {
+  background: linear-gradient(90deg, #0f0f1a, #1a1a2e);
+  padding: 16px 40px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.brand-text {
+  color: #a855f7;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-link-custom {
+  color: #ffffff;
+  font-size: 0.95rem;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.nav-link-custom:hover {
+  background: rgba(168, 85, 247, 0.2);
+  color: #fff;
+}
+
+.nav-link-primary {
+  background: linear-gradient(135deg, #a855f7, #6366f1);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.nav-link-danger {
+  color: #ff6b6b;
+  font-size: 0.95rem;
+  text-decoration: none;
+  padding: 8px 4px;
+}
+
+.nav-divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.admin-badge {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 5px;
+  background: rgba(168, 85, 247, 0.2);
+  color: #c084fc;
+}

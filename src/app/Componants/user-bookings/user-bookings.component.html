@@ -1,0 +1,36 @@
+<div class="page-wrap">
+  <h2 class="page-title">My Rentals</h2>
+
+  <div *ngIf="bookings.length === 0" class="empty-msg">
+    You have no rental requests yet.
+  </div>
+
+  <div *ngFor="let b of bookings" class="purchase-card">
+    <div class="purchase-inner">
+
+      <div class="purchase-img-wrap">
+        <img
+          [src]="b.carImage ? 'data:image/jpeg;base64,' + b.carImage : 'assets/default-car.jpg'"
+          alt="Car">
+      </div>
+
+      <div class="purchase-details">
+        <h4 class="purchase-car-name">{{b.carName || 'Car #' + b.carId}}</h4>
+        <hr class="purchase-divider">
+        <p class="purchase-info">
+          From : <strong>{{b.fromDate | date:'dd/MM/yyyy'}}</strong> &ndash;
+          To : <strong>{{b.toDate | date:'dd/MM/yyyy'}}</strong> &ndash;
+          Days : <strong>{{b.days}}</strong> &ndash;
+          Total : <strong>{{b.price | currency:'EGP '}}</strong>
+        </p>
+        <span class="status-badge"
+              [class.approved]="b.bookCarStatus === 'APPROVED'"
+              [class.rejected]="b.bookCarStatus === 'REJECTED'"
+              [class.pending]="b.bookCarStatus === 'PENDING'">
+          {{b.bookCarStatus}}
+        </span>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,103 @@
+<div class="container py-5">
+  <div class="cr-card">
+
+    <div class="cr-card-header">
+      <h4>Edit Car</h4>
+    </div>
+
+    <div class="cr-card-body">
+      <form #carForm="ngForm" (ngSubmit)="updateCar()">
+
+        <!-- Image Upload -->
+        <div class="upload-area" (click)="fileInput.click()">
+
+          <img *ngIf="previewUrl || car.returnedImage"
+               [src]="previewUrl ? previewUrl : 'data:image/png;base64,' + car.returnedImage"
+               class="upload-preview">
+
+          <div *ngIf="!previewUrl && !car.returnedImage" class="upload-placeholder">
+            <div class="upload-icon">
+              <p>Click to upload car image</p>
+              <span>JPG, PNG, WEBP</span>
+            </div>
+          </div>
+
+          <input #fileInput type="file"
+                 accept="image/*"
+                 style="display:none"
+                 (change)="onFileSelected($event)">
+        </div>
+
+        <!-- Fields -->
+        <div class="fields-grid">
+
+          <div class="field-group">
+            <label>Brand *</label>
+            <input type="text" class="cr-input"
+                   [(ngModel)]="car.brand" name="brand" required>
+          </div>
+
+          <div class="field-group">
+            <label>Model Name *</label>
+            <input type="text" class="cr-input"
+                   [(ngModel)]="car.name" name="name" required>
+          </div>
+
+          <div class="field-group">
+            <label>Color</label>
+            <input type="text" class="cr-input"
+                   [(ngModel)]="car.color" name="color">
+          </div>
+
+          <div class="field-group">
+            <label>Type</label>
+            <input type="text" class="cr-input"
+                   [(ngModel)]="car.type" name="type">
+          </div>
+
+          <div class="field-group">
+            <label>Transmission</label>
+            <input type="text" class="cr-input"
+                   [(ngModel)]="car.transmission" name="transmission">
+          </div>
+
+          <div class="field-group">
+            <label>Year</label>
+            <input type="number" class="cr-input"
+                   [(ngModel)]="car.year" name="year">
+          </div>
+
+          <div class="field-group">
+            <label>Rent Price *</label>
+            <input type="number" class="cr-input"
+                   [(ngModel)]="car.price" name="price" required>
+          </div>
+
+          <div class="field-group">
+            <label>Buy Price *</label>
+            <input type="number" class="cr-input"
+                   [(ngModel)]="car.buyPrice" name="buyPrice" required>
+          </div>
+
+        </div>
+
+        <div class="field-group">
+          <label>Description</label>
+          <textarea class="cr-input cr-textarea"
+                    [(ngModel)]="car.description"
+                    name="description"></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit"
+                [disabled]="isLoading || carForm.invalid">
+
+          <span *ngIf="isLoading" class="spinner"></span>
+
+          {{ isLoading ? 'Updating...' : 'Update Car' }}
+        </button>
+
+      </form>
+    </div>
+
+  </div>
+</div>

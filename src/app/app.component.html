@@ -1,0 +1,13 @@
+<div class="container-xxl bg-white p-0">
+
+  <app-header></app-header>
+
+  <div class="container py-4" *ngIf="isUserLogin()">
+    <div class="text-center">
+      <h5 class="text-primary">Cars</h5>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
+
+</div>

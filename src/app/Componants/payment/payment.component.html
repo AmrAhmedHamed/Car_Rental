@@ -1,0 +1,28 @@
+<div class="payment-page">
+  <div class="payment-card">
+
+    <h2 class="payment-title">Complete Purchase</h2>
+    <p class="payment-car">{{carName}}</p>
+    <p class="payment-amount">Amount: <strong>{{amount | currency:'EGP '}}</strong></p>
+
+    <hr>
+
+    <div class="card-field-wrap">
+      <label>Card Details</label>
+      <div id="card-element" class="card-element"></div>
+    </div>
+
+    <div *ngIf="errorMsg" class="error-msg">{{errorMsg}}</div>
+    <div *ngIf="successMsg" class="success-msg">{{successMsg}}</div>
+
+    <button class="pay-btn" (click)="pay()" [disabled]="isLoading">
+      <span *ngIf="isLoading">Processing...</span>
+      <span *ngIf="!isLoading">Pay {{amount | currency:'EGP '}}</span>
+    </button>
+
+    <p class="test-hint">
+      Test card: <strong>4242 4242 4242 4242</strong> | Exp: 12/26 | CVC: 123
+    </p>
+
+  </div>
+</div>

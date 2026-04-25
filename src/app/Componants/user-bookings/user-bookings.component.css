@@ -1,0 +1,82 @@
+.page-wrap {
+  max-width: 1500px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+.page-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1e2a3a;
+  margin-bottom: 24px;
+}
+.empty-msg {
+  text-align: center;
+  padding: 40px;
+  color: #888;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+.purchase-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  overflow: hidden;
+  margin-bottom: 20px;
+  transition: box-shadow 0.2s;
+}
+.purchase-card:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+.purchase-inner {
+  display: flex;
+  align-items: center;
+}
+.purchase-img-wrap {
+  flex-shrink: 0;
+  width: 200px;
+  height: 150px;
+  overflow: hidden;
+}
+.purchase-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.purchase-details {
+  flex: 1;
+  padding: 18px 26px;
+}
+.purchase-car-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #3a7bd5;
+  text-transform: uppercase;
+  margin: 0 0 6px 0;
+}
+.purchase-divider {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 8px 0;
+}
+.purchase-info {
+  font-size: 0.87rem;
+  color: #555;
+  margin: 0 0 12px 0;
+  line-height: 1.7;
+}
+.purchase-info strong { color: #222; }
+.status-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.status-badge.approved { background: #d4edda; color: #155724; }
+.status-badge.rejected { background: #f8d7da; color: #721c24; }
+.status-badge.pending  { background: #fff3cd; color: #856404; }
+@media (max-width: 600px) {
+  .purchase-inner { flex-direction: column; }
+  .purchase-img-wrap { width: 100%; height: 200px; }
+}
