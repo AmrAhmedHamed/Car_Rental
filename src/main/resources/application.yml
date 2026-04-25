@@ -1,0 +1,32 @@
+server:
+  port: 9090
+
+jwt:
+  secret: "mySuperSecretKeyThatIsAtLeast32CharactersLong!"
+  expiration: 86400000
+
+stripe:
+  secret:
+    key: sk_test_51TOcCPEJmKJaxS2kc7JT41SBxsVUukXIvH36HT9BMaZLHAR30vBxSmikqjj3mG2On8A10YqOUxt0KQougspBeJcx00kVHN3SUQ
+  publishable:
+    key: pk_test_51TOcCPEJmKJaxS2krJV1QfbuUlBV2GrAjSIrtCpAntIuY5vHRIhFK0SmvUZYJeAhUz6Rr1QvxK5Afik2YzisonPn00YoNsbCQN
+
+spring:
+  messages:
+    basename: i18n/masseges
+    encoding: UTF-8
+
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@//localhost:1521/orclpdb
+    username: hr
+    password: hr123
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  redis:
+    host: localhost
+    port: 6379
